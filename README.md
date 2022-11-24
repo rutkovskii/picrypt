@@ -1,7 +1,9 @@
 # PICRYPT
 
 Final Project Proposal (ECE 597-NP, Fall 2022)
+
 PICRYPT
+
 (By: Aleksei Rutkovskii and Sohan Show)
 
 ## Team members:
