@@ -25,6 +25,7 @@ image2_path = "./assets/after.jpeg"
 image1 = cv2.imread(image1_path)
 image2 = cv2.imread(image2_path)
 print(type(image1))
+1280,980,3
 
 scale_percent = 30 # percent of original size
 width = int(image1.shape[1] * scale_percent / 100)
@@ -38,6 +39,7 @@ resized2 = cv2.resize(image2, dim, interpolation=cv2.INTER_AREA)
 
 #compiler = cnp.Compiler(rgb_subtract, {"x1":'clear', "x2":'encrypted'})
 #inputset = [(255, 244)]
+#inputset = [(image1, image2)]
 
 
 # print(f"Compiling...")
