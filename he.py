@@ -6,6 +6,8 @@
 
 # Also tried to use cv2.subtract, but seems that library does not support homomorphic encryption on np.ndarrays
 
+# https://github.com/zama-ai/concrete-numpy
+
 ######################################################
 
 import concrete.numpy as cnp

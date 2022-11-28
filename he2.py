@@ -3,6 +3,8 @@
 # Playing around with the original example code
 # When inputset = [(254, 200), (0, 0)], compiler does not compile at all after even 10 minutes
 
+# https://github.com/zama-ai/concrete-numpy
+
 ######################################################
 
 
