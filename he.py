@@ -8,6 +8,10 @@
 
 # https://github.com/zama-ai/concrete-numpy
 
+
+# worthy of trying
+# https://github.com/chronarchitect/Homomorphic-Image-Encryption
+
 ######################################################
 
 import concrete.numpy as cnp
