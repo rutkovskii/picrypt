@@ -26,7 +26,7 @@ if __name__ == '__main__':
     result = image_subtract(image2, image1)
 
     # TO show the output
-    cv2.imshow('Difference Image', subtracted)
+    cv2.imshow('Difference Image', result)
 
     # To close the window
     cv2.waitKey(0)

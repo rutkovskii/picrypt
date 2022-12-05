@@ -1,5 +1,5 @@
 import random
-import ModularArithmetic as mod
+import PHE.ModularArithmetic as mod
 
 def is_probably_prime(n):
     """

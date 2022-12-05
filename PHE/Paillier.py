@@ -1,7 +1,7 @@
 import random
 
-import ModularArithmetic
-import RabinMiller
+import PHE.ModularArithmetic as ModularArithmetic
+import PHE.RabinMiller as RabinMiller
 
 class PrivateKey:
     """
