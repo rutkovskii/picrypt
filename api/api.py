@@ -1,11 +1,16 @@
 from numpy_json import encodeNumpyArray, decodeNumpyArray
-from flask import Blueprint, request, jsonify
-import json
-import cv2
+from flask import Blueprint, request
+import json, cv2
 import numpy as np
+import logging
 
 
 api_blueprint = Blueprint('api', __name__)
+
+
+log = logging
+log.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
+
 
 
 @api_blueprint.route('/')
@@ -27,10 +32,15 @@ def image_subtract(image1:np.ndarray, image2:np.ndarray):
 
 @api_blueprint.route('/runner', methods=['POST'])
 def runner():
-    # image1, image2 = decodeJsons(request.json['image1'], request.json['image2'])
+    log.info("")
+    log.info("Object is received")
     obj = json.loads(request.json)
+    log.info("Decoding Encrypted Images")
     image1, image2 = decodeJsons(obj['image1'], obj['image2'])
+    log.info("Subtracting Encrypted Images")
     final_image = image_subtract(image1, image2)
+    log.info("Encoding Subtracted Image")
     final_encoded_image = encodeJson(final_image)
-    #print(json.dumps(final_encoded_image))
+    log.info("Returning Subtracted Image")
+    log.info("")
     return json.dumps(final_encoded_image)

@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 import pickle
 
-import PHE.Paillier as Paillier
+import scratch.PHE.Paillier as Paillier
 
 def ImgEncrypt(public_key, plainimg):
     """

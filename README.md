@@ -1,42 +1,42 @@
-# Secure Outsourcing of Image Editing Based on Homomorphic Encryption
+# PICRYPT
+## Final Project Proposal (ECE 597-NP, Fall 2022)
 
-### Problem Definition
-Various cloud storage services now provide some basic image editing functionalities as well. Considering an image may disclose private information about the user and most coud based services provide free tier plans. The security threats faced by the user primarily from
+(By: Aleksei Rutkovskii and Sohan Show)
 
-1. malicious behaviour of the cloud where the cloud server may be interested to learn the private information contained in the images
-2. an attacker gains access to the server and by extension all the images stored in it.
+## Team members:
+Aleksei Rutkovskii and Sohan Show
 
-### Proposed Solution
+## Problem statement:
+In our day to day lives, we always interact with servers to access services. This can be translating texts from one language to another or converting speech to text, doing image processing, or just merely communicating with other people far apart. However, in all these cases above, data might be exposed to the server for a service to be performed. But, with the invention of homomorphic encryption, we can now perform arithmetic operations on encrypted data without the need for it to be decrypted or exposed to the server. This drastically improves privacy protection and helps the user to access services without exposing their raw data. This is what we aim to demonstrate in our project. Our project, PICRYPT, enables users to find the pixel by pixel difference between two images without exposing the real image to the service provider.
 
-We construct an image encryption and editing model based on homomorphic encryption. The idea of homomorphic computation is to perform operations on an encrypted ciphertext and the result would be the same as performing the operations on the plaintexts. <br/>
-In our implementaion we extend Paillier's Homomorphic Encryption (PHE) scheme to operate over images. The Paillier cryptosystem is an additive homomorphic and probabilistic asymmetric encryption scheme. It is only partially homomorphic as it can only add encrypted ciphertexts or multiply an encrypted ciphertext by a plaintext. <br/>
-The homomorphic properties of this cryptosystem is demonstrated by applying a brightness adjustment transform over the encrypted image.
+## Goals and Motivation:
+The idea is to use homomorphic encryption on two images and then send it over to the server (the service provider) which would then perform pixel by pixel subtraction on the two images and return the result back to the client. The client can then decrypt the image and see the result.
 
-#### Implementing PHE
+The goal of the demo would be to demonstrate that the server is successfully subtracting one image from another one, where both images are homomorphically encrypted. Example of it would be subtracting one image with a moving object from another one with the same background resulting in two versions of the same object a certain distance apart.
 
-We implement PHE and then extend it for images. To generate secure keys we require large primes. In our implementation we use the Rabin-Miller primality test to generate probabilistic primes of a given bit length. <br/>
-All of the mathematics required for Paillier Cryptosystem and Rabin-Miller test are defined inside `ModularArithmetic.py` <br/>
-`ModularArithmetic` and `RabinMiller` are prerequisites used by `Paillier.py`. <br/>
-To use our implementation of PHE there are no dependecies as everything has been implemented from scratch. Simply import the file
-```
-import Paillier
-```
+## The entire flow would look like this:
+Person would upload 2 images of a moving object with the same background Both of them would be Homomorphically Encrypted with client’s secret key Encrypted images would be then send to the server Upon receiving the server would do subtraction of the first encrypted image from the second resulting in a single image Then the new image would send back to the client Client would decrypt the image and see the result of object moving
 
-#### Extending PHE for Image Cryptography
+## Plan for execution:
+Create a Proof-of-Concept locally initiating client and server Write script to subtract images and show the output image Apply homomorphic encryption on the original images and do the subtraction on the encrypted images Create Python (Flask) Server on one computer and Client on another computer on the same network to test image exchange between them Develop minimal website locally Host Server on AWS/GCP/Linode server providers, configure the server Integrate website to the server and test the project
 
-The `ImageCryptography` module depends on two other modules which can be installed through `pip` namely `Python Imaging Library (PIL)` and `numpy`. <br/>
-To use this make sure the dependencies are met and <br/>
-```
-import Paillier
-import ImageCryptography
-```
- The Paillier module is used for generating keys here.
-To extend Paillier for image encryption, we use the `Paillier.Encrypt` function to encrypt each pixel in our image, the image decryption function behaves similarly. <br/>
-To show homomorphic image editing is possible, we have implemented a simple brightness function which makes use of Paillier's homomorphic constant addition to add a brightness factor to each pixel of the encrypted image. <br/>
-In order to store encrypted image objects we use the built-in python module `pickle` which serialises the encrypted image object and stores it as a file.
+## Milestones:
+Nov - 09 - 2022: We test out homomorphic encryption on two simple images locally.
 
-#### Developers
-* [Aniket Das](https://github.com/chronarchitect)
-* [Akarsh Srivastava](https://github.com/heisenberg42) 
-* Kanishka Gupta
-* [Somdatta Mukherjee](https://github.com/SomdattaMukherjee/)
+Nov - 16 - 2022: We create a local server and test out the pixel by pixel subtraction done on the homomorphic encrypted images and later decrypt it to see if the results match what we desire it to be.
+
+Nov - 23 - 2022: We build out a client - server model. And try to send the images to the server and perform the services and get back a desired result.
+
+Nov - 28 - 2022: Feature testing and debugging if required.
+
+Dec - 05 - 2022: Feature freeze and deployment.
+
+Dec - 06 - 2022 / Dec - 08 - 2022: Demo Day
+
+
+## How to run the code:
+In one terminal, run the API from root directory:
+```python3 api/run.py```
+
+In another terminal, run the client from root directory:
+```python3 client/main.py```

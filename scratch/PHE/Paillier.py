@@ -1,7 +1,7 @@
 import random
 
-import PHE.ModularArithmetic as ModularArithmetic
-import PHE.RabinMiller as RabinMiller
+from scratch import PHE as ModularArithmetic
+import scratch.PHE.RabinMiller as RabinMiller
 
 class PrivateKey:
     """
@@ -22,8 +22,8 @@ class PrivateKey:
     
     def __init__(self, p, q, n):
 
-        self.λ = ModularArithmetic.lcm( p-1, q-1)
-        self.μ = ModularArithmetic.multiplicative_inverse( self.λ, n)
+        self.λ = ModularArithmetic.lcm(p - 1, q - 1)
+        self.μ = ModularArithmetic.multiplicative_inverse(self.λ, n)
         
     def __repr__(self):
         return ("---\nPrivate Key :\nλ:\t"+str(self.λ) +"\nμ:\t"+str(self.μ) +"\n---")
@@ -85,7 +85,7 @@ def Encrypt(public_key, plaintext):
     """
     
     r = random.randint( 1, public_key.n-1)
-    while not ModularArithmetic.xgcd( r, public_key.n)[0] == 1:
+    while not ModularArithmetic.xgcd(r, public_key.n)[0] == 1:
         r = random.randint( 1, public_key.n)
         
     a = pow(public_key.g, plaintext, public_key.nsq)

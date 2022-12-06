@@ -14,10 +14,8 @@
 
 ######################################################
 
-import concrete.numpy as cnp
-import numpy as np
 import cv2
-from opencv_sub import image_subtract
+
 
 def rgb_subtract(x1, x2):
     return x1 - x2
