@@ -3,7 +3,7 @@
 
 
 ## Team members:
-Aleksei Rutkovskii and Sohan Show
+[Aleksei Rutkovskii](https://github.com/rutkovskii) and [Sohan Show](https://github.com/sohanshow)
 
 
 ## Set Up (Linux)
@@ -43,3 +43,13 @@ Person would upload 2 images of a moving object with the same background Both of
 
 ## Plan for execution:
 Create a Proof-of-Concept locally initiating client and server Write script to subtract images and show the output image Apply homomorphic encryption on the original images and do the subtraction on the encrypted images Create Python (Flask) Server on one computer and Client on another computer on the same network to test image exchange between them Develop minimal website locally Host Server on AWS/GCP/Linode server providers, configure the server Integrate website to the server and test the project
+
+## Encryption Library:
+https://github.com/mastnk/imageshuffle
+
+Developed by [Masataka Nakagawa](https://github.com/mastnk) 
+
+[Original Project Page by Masataka Nakagawa](http://www.ok.sc.e.titech.ac.jp/~mtanaka/proj/imagescramble/)
+
+Reference:
+Masayuki Tanaka, Learnable Image Encryption, IEEE International Conference on Consumer Electronics TAIWAN (ICCE-TW), 2018.
