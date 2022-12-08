@@ -79,5 +79,15 @@ def send_samples(url,arrays_list):
     return response
 
 if __name__ == '__main__':
-    url = 'http://172.31.171.181:5000/runner'
-    sender(url,show_images=True)
+
+    # Inputs
+    url = 'http://172.31.171.181:5000'
+    image1path = './client/assets/before.jpeg'
+    image2path = './client/assets/after.jpeg'
+
+
+
+    full_url = f"{url}/api/runner"
+
+    # Turn On the client
+    sender(full_url, image1path, image2path, show_images=True)

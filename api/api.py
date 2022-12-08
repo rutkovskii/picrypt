@@ -15,11 +15,12 @@ log.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 
 @api_blueprint.route('/')
 def index():
-    return 'Hello, World!'
+    return 'Hello, ECE597 NP!'
 
 
 def decodeJsons(arr1,arr2):
     return decodeNumpyArray(arr1), decodeNumpyArray(arr2)
+
 
 def encodeJson(arr):
     return encodeNumpyArray(arr)
@@ -30,7 +31,7 @@ def image_subtract(image1:np.ndarray, image2:np.ndarray):
     return cv2.subtract(image1, image2)
 
 
-@api_blueprint.route('/runner', methods=['POST'])
+@api_blueprint.route('/api/runner', methods=['POST'])
 def runner():
     log.info("")
     log.info("Object is received")
