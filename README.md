@@ -34,19 +34,25 @@ Dec - 05 - 2022: Feature freeze and deployment.
 Dec - 06 - 2022 / Dec - 08 - 2022: Demo Day
 
 
-## Set Up
+## Set Up (Linux)
 1. `python3 -m venv venv`
 2. `source venv/bin/activate`
 3. `pip3 install -r requirements.txt`
 4. `pip3 install git+https://github.com/mastnk/imageshuffle`
 
+## Set Up (Windows)
+1. `python -m venv venv`
+2. `./venv/Scripts/Activate.ps1`
+3. `pip install -r requirements.txt`
+4. `pip install git+https://github.com/mastnk/imageshuffle`
+
 
 ## How to run the code:
 1. In one terminal, run the API from root directory:
-```python3 api/run.py```
+```python3 api/run.py``` or ```python api/run.py```
 
 2. In another terminal, run the client from root directory:
-```python3 client/main.py```
+```python3 client/main.py``` or ```python client/main.py```
 
 ## When done working:
 1. `deactivate`
