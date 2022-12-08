@@ -79,5 +79,5 @@ def send_samples(url,arrays_list):
     return response
 
 if __name__ == '__main__':
-    url = 'http://172.31.16.12:5000/runner'
+    url = 'http://172.31.171.181:5000/runner'
     sender(url,show_images=True)
