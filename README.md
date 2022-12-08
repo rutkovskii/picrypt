@@ -6,6 +6,8 @@
 [Aleksei Rutkovskii](https://github.com/rutkovskii) and [Sohan Show](https://github.com/sohanshow)
 
 
+## Python 3.8.10
+
 ## Set Up (Linux)
 1. `python3 -m venv venv`
 2. `source venv/bin/activate`
