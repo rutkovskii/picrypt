@@ -81,10 +81,9 @@ def send_samples(url,arrays_list):
 if __name__ == '__main__':
 
     # Inputs
-    url = 'http://172.31.171.181:5000'
-    image1path = './client/assets/before.jpeg'
-    image2path = './client/assets/after.jpeg'
-
+    url = 'http://10.160.10.113:7000'               # Insert your link
+    image1path = './client/assets/before.jpeg'      # Place your images in the client/assets folder
+    image2path = './client/assets/after.jpeg'       # And change the path here
 
 
     full_url = f"{url}/api/runner"

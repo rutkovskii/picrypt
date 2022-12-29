@@ -1,6 +1,6 @@
 import cv2
 from imageshuffle import imageshuffle
-from random import randint
+import secrets # instead of random module
 
 
 def cv2_open_images(path1,path2):
@@ -20,7 +20,8 @@ def cv2_window_sleeper():
 
 def __generate_key():
     """Create a random key for the encryption"""
-    return randint(10001, 99999)
+    SR = secrets.SystemRandom()
+    return SR.randrange(10001, 99999)
 
 
 def generate_S(key=1234):

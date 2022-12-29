@@ -4,13 +4,10 @@ import json, cv2
 import numpy as np
 import logging
 
-
 api_blueprint = Blueprint('api', __name__)
-
 
 log = logging
 log.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
-
 
 
 @api_blueprint.route('/')

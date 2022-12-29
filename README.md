@@ -8,7 +8,7 @@
 
 ## Python 3.8.10
 
-## Set Up (Linux)
+## Set Up (Linux/MacOS)
 1. `python3 -m venv venv`
 2. `source venv/bin/activate`
 3. `pip3 install -r requirements.txt`
