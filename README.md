@@ -21,14 +21,19 @@
 4. `pip install git+https://github.com/mastnk/imageshuffle`
 
 
-## How to run the code:
+## How to run the code (make sure to enter the venv)):
 1. In one terminal, run the API from root directory:
 ```python3 api/run.py``` or ```python api/run.py```
 
-2. In another terminal, run the client from root directory:
+2. Take the generated URL in terminal and copy it.
+
+3. Open clinet/main.py and paste the URL in line 84.
+    ```url = '<YOUR-URL>```
+
+4. In another terminal, run the client from root directory:
 ```python3 client/main.py``` or ```python client/main.py```
 
-## When done working:
+## When done working (in both terminals)):
 1. `deactivate`
 
 
